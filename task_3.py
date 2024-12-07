@@ -16,9 +16,9 @@ class Dog(HomeAnimal):
     
     def __init__(self,name,typ,ani_sound):
         super().__init__(name,typ)
-        self.ani_sound = ani_sound
+        self.__ani_sound = ani_sound
     def animal_sound(self):
-        return print(f"Животное издает звуки {self.ani_sound}")
+        return print(f"Животное издает звуки {self.__ani_sound}")
 
 
     def show(self):
@@ -38,10 +38,10 @@ class Cat(HomeAnimal):
 
     def __init__(self, name, typ, ani_sound):
         super().__init__(name, typ)
-        self.ani_sound = ani_sound
+        self.__ani_sound = ani_sound
 
     def animal_sound(self):
-        return print(f"Животное издает звуки {self.ani_sound}")
+        return print(f"Животное издает звуки {self.__ani_sound}")
 
     def show(self):
         return print(f'Имя животного {self.name}')
@@ -60,10 +60,10 @@ class Parrot(HomeAnimal):
 
     def __init__(self, name, typ, ani_sound):
         super().__init__(name, typ)
-        self.ani_sound = ani_sound
+        self.__ani_sound = ani_sound
 
     def animal_sound(self):
-        return print(f"Животное издает звуки {self.ani_sound}")
+        return print(f"Животное издает звуки {self.__ani_sound}")
 
     def show(self):
         return print(f'Имя животного {self.name}')
@@ -82,10 +82,10 @@ class Hamster(HomeAnimal):
 
     def __init__(self, name, typ, ani_sound):
         super().__init__(name, typ)
-        self.ani_sound = ani_sound
+        self.__ani_sound = ani_sound
 
     def animal_sound(self):
-        return print(f"Животное издает звуки {self.ani_sound}")
+        return print(f"Животное издает звуки {self.__ani_sound}")
 
     def show(self):
         return print(f'Имя животного {self.name}')
@@ -99,5 +99,7 @@ hamster = Hamster("Хома", "Хомяк", f'{sound}')
 hamster.show()
 hamster.type_animal()
 hamster.animal_sound()
+
+#Не понимаю почему, если я ставлю защиту по типу self.__name то выдает такую ошибку AttributeError: 'Dog' object has no attribute '_Dog__name'
 
 
